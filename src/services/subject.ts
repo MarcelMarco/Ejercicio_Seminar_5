@@ -48,10 +48,8 @@ const getListOfUsers=async(id:string)=>{
     return responseItem;
 };
 
-//getListOfSubjects
 const getListOfSubjects=async(id:string)=>{
-    //const responseItem=await SubjectModel.find({_id:id}).populate('users');
-    const responseItem=await SubjectModel.find({}).populate('users');
+    const responseItem=await SubjectModel.find({users:id}).populate('users');
     return responseItem;
 };
 

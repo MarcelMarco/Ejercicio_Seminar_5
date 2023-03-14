@@ -34,17 +34,15 @@ const get_ListOfUsers = async({params}:Request,res:Response)=>{
     try{
         const {idSubject} = params;        
         const response = await getListOfUsers(idSubject);
-        const usuarios = response?.users;
         const data = response ? response:"NOT_FOUND";
         // if (response?.users != undefined){
-            // console.log(response.users);
-            // response.users.forEach(element => console.log(element.name));
+        //     response.users.forEach(element => console.log(element));
         // }
-        const users = response?.users;
-        console.log(users);
+        // const users = response?.users;
+        // console.log(users);
         res.send(data);
     } catch(e){
-        handleHttp(res,"ERROR_GET_SUBJECT");
+        handleHttp(res,"ERROR_GET_USERS");
     }
 };
 
